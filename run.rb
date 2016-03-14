@@ -32,8 +32,8 @@ def populate_posts(page, id)
                                  cathegory: post['type'],
                                  shares_count: shares_count
     max = @graph.get_object(post['id'], fields: "likes.summary(true)")['likes']['summary']['total_count']
-    @bar = ProgressBar.new(max)
     puts Time.parse(post['created_time']).strftime('%d/%m/%Y %H:%M:%S')
+    @bar = ProgressBar.new(max)
     break if (Time.parse(post['created_time']) < LIMIT)
     new_post.likes_count = populate_likes(page, new_post, post['id'])
     new_post.save
@@ -48,20 +48,16 @@ new_page = Page.create fb_id: $id,
                        likes_count: page['likes'],
                        name: page['name']
 
-puts "Baixando posts de #{page['name']}."
-puts "Serão processados todos os posts até dia #{LIMIT.strftime(%d/%m/%Y)}."
+puts "Baixando posts de #{page['name']}..."
+puts "Serão processados todos os posts até dia #{LIMIT.strftime('%d/%m/%Y')}."
 puts "Isso pode levar várias horas."
 
 new_page.posts_count = populate_posts(new_page, $id)
 new_page.save
 
-count = 0
-Confirmed.all.each do |user|
-  count += 1 if new_page.likes_total.include? user
-end
+puts "Calucalando quantos a intersecção dos conjuntos..."
+count = (Set.new(Confirmed.all.map(&:user)) & new_page.likes_total).size
 
 puts "#{page['name']}"
-puts "Curtidas no último mês: #{new_page.likes_total}"
-puts "Número de usuários que curtiram no último mês: #{Set.new(new_page.likes_total).count}"
+puts "Curtidas no último mês: #{new_page.likes_total.size}"
 puts "Número de usuários que confirmaram presença nos eventos: #{count}"
-puts "Porcentagem do total de confirmados: #{100*Float(count)/Confirmed.size}\%"

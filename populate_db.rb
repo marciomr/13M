@@ -70,6 +70,8 @@ def get_access_code(page)
   CGI.parse(uri.query)['code'].first  
 end
 
+puts "Conectando..."
+
 # conecta com a Graph API
 @oauth = Koala::Facebook::OAuth.new(@config['app_id'], @config['app_secret'], REDIRECT_URL)
 code = get_access_code(@oauth.url_for_oauth_code)
