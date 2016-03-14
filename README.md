@@ -6,6 +6,9 @@
 * No Windows
   * http://rubyinstaller.org/
 
+# Baixe a aplicação #
+* `git clone https://github.com/marciomr/13M.git`
+
 # Crie uma aplicação no Facebook #
 * Visite a página: https://developers.facebook.com/apps
 * Clique no botão "Add a new app"
