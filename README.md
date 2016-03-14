@@ -1,6 +1,7 @@
 # Instale o ruby #
 * No Debian/Ubuntu
   * `sudo apt-get install ruby`
+  * `sudo gem install bundler`
 * No Windows
   * http://rubyinstaller.org/
 
