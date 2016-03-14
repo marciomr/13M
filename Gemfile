@@ -1,6 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem "progress_bar"
 gem "activerecord" # abstrai a base de dados
 gem "sqlite3" # base de dados sqlite
 gem "koala" # se comunica com o FB
