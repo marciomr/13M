@@ -6,9 +6,6 @@
 * No Windows
   * http://rubyinstaller.org/
 
-# Baixe a aplicação #
-* `git clone https://github.com/marciomr/13M.git`
-
 # Crie uma aplicação no Facebook #
 * Visite a página: https://developers.facebook.com/apps
 * Clique no botão "Add a new app"
@@ -20,8 +17,12 @@
 * Coloque o URL http://gpopai.usp.br
 * Salve as alerações
 
-# Rode a aplicação #
-* Vá para um terminal e digite rode o comando `bundle` para instalar as dependências
+# Baixe o programa #
+* `git clone https://github.com/marciomr/13M.git`
+
+# Rode o programa #
+* Entre na pasta `cd 13M`
+* Digite `bundle` para instalar as dependências
 * Rode o comando `ruby run.rb`
 * Na primeira execução você terá que digitar
   * o email usado no Facebook,
