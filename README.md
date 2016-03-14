@@ -1,8 +1,8 @@
 # Instale o ruby #
 * No Linux
   * Instruções em https://rvm.io/rvm/install
-  * sudo apt-get install curl
-  * curl -sSL https://get.rvm.io | bash
+  * `sudo apt-get install curl`
+  * `curl -sSL https://get.rvm.io | bash`
 * No Windows
   * http://rubyinstaller.org/
 
@@ -14,12 +14,12 @@
 * Anote o ID da sua aplicação e o segredo
 * Clique "Settings"
 * Na aba "Advanced" procure a opção "Valid OAuth redirect URIs"
-* Coloqueo URL "http://gpopai.usp.br"
+* Coloque o URL http://gpopai.usp.br
 * Salve as alerações
 
 # Rode a aplicação #
-* Vá para um terminal e digite rode o comando "bundle" para instalar as dependências
-* Rode o comando "ruby run.rb"
+* Vá para um terminal e digite rode o comando `bundle` para instalar as dependências
+* Rode o comando `ruby run.rb`
 * Na primeira execução você terá que digitar
   * o email usado no Facebook,
   * sua senha,
