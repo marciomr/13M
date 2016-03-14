@@ -1,8 +1,6 @@
 # Instale o ruby #
-* No Linux
-  * Instruções em https://rvm.io/rvm/install
-  * `sudo apt-get install curl`
-  * `curl -sSL https://get.rvm.io | bash`
+* No Debian/Ubuntu
+  * `sudo apt-get install ruby`
 * No Windows
   * http://rubyinstaller.org/
 
