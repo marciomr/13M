@@ -1,6 +1,6 @@
 # Instale o ruby #
 * No Debian/Ubuntu
-  * `sudo apt-get install ruby ruby-dev`
+  * `sudo apt-get install ruby ruby-dev libsqlite3-dev`
   * `sudo gem install bundler`
 * No Windows
   * http://rubyinstaller.org/
