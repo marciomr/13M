@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-# coding: utf-8
+# encoding: utf-8
 
 require 'koala'
 require 'highline/import'
@@ -10,15 +10,6 @@ require './populate_db.rb'
 LIMIT = Time.new() - 1.month
 
 $id = ask "Digite o ID da página"
-
-# popula a tabela de likes
-def populate_likes(page, post, id)
-  likes = connect(id, 'likes')
-  total(likes) do |like|
-    post.likes.create user: like['id']
-    @bar.increment!
-  end
-end
 
 # popula a tabela de posts
 def populate_posts(page, id)
