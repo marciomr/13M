@@ -44,10 +44,14 @@ end
 # pego cada uma dessas páginas, cada post dela e cada curtida nos posts
 # guardo tudo em um DB usando o ActiveRecord
 page = @graph.get_object($id)
-new_page = Page.create fb_id: $id,
+pageDB = Page.where(fb_id: page['id'])
+if !pageDB.empty?
+  new_page = pageDB.first
+else
+  new_page = Page.create fb_id: $id,
                        likes_count: page['likes'],
                        name: page['name']
-
+end
 puts "Baixando posts de #{page['name']}..."
 puts "Serão processados todos os posts até dia #{LIMIT.strftime('%d/%m/%Y')}."
 puts "Isso pode levar várias horas."
