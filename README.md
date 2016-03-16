@@ -34,6 +34,7 @@ GRANT ALL ON 13M.* TO 13M@'localhost';
 * Entre na pasta `cd 13M`
 * Digite `bundle` para instalar as dependências
 * Edite o arquivo `IDs.yaml` para incluir as páginas que você deseja estudar.
+* Crie a base de dados `ruby schema.rb`
 * Rode o comando `ruby populate.rb`
 * Na primeira execução você terá que digitar
   * o email usado no Facebook,
