@@ -30,6 +30,13 @@ pages: # ID das páginas a coletar
   - 115230991849922 # O Globo 
   - 303522857815 # BBC Brasil 
   - 21539158238 # UOL 
+  - 609051955819458 # Tijolaço
+  - 127835925882 # Rede Brasil Atual
+  - 259797052227 # Revista Caros Amigos
+  - 167637636622585 # Brasil 247
+  - 194552750585551 # Carta Maior
+  - 171979776293312 # Jornal GGN
+  - 1415247615445907 # Luis Nassif
 # POLÍTICOS
   - 112892465403479 # Fernando Gabeira
   - 166860353356903 # Cristovam Buarque
