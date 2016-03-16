@@ -22,12 +22,13 @@
 # Rode o programa #
 * Entre na pasta `cd 13M`
 * Digite `bundle` para instalar as dependências
-* Rode o comando `ruby run.rb`
+* Edite o arquivo `IDs.yaml` para incluir as páginas que você deseja estudar.
+* Rode o comando `ruby populate.rb`
 * Na primeira execução você terá que digitar
   * o email usado no Facebook,
   * sua senha,
   * o ID da aplicação e
   * o segredo da aplicação.
-* Visite https://github.com/marciomr/13M/issues e escolha uma página ainda não estudada
 * O processo demorará algumas horas
+* Rode o comando `ruby results.rb` para ver os resultados.
 * Quando finalizar por favor nos encaminhe o resultado
