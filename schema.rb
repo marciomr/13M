@@ -11,7 +11,7 @@ ActiveRecord::Migration.class_eval do
 
   create_table :posts do |t|
     t.string :fb_id, null: false
-    t.text :message, null: false
+    t.text :message # PODE ser nulo (apenas imagem)
     t.belongs_to :page, index: true
   end
   add_index :posts, :fb_id, unique: true

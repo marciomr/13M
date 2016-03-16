@@ -9,9 +9,17 @@ class Page < ActiveRecord::Base
 
     # devolve todos os likes de todos os posts de uma página
     def likes_total
+        total = 0
+        posts.all.each do |post|
+            total += post.likes.size
+        end
+        total
+    end
+    # devolve todos os usuarios que interagiram com a pagina
+    def interacting
         total = Set.new
         posts.all.each do |post|
-            total.merge(post.likes.map(&:user))
+            total.merge(post.likes.map(&:user_id))
         end
         total
     end
@@ -42,7 +50,9 @@ class Post < ActiveRecord::Base
         end
         ActiveRecord::Base.transaction do
             fb_post = Facebook.connect(id, 'self')
-            post = Post.create fb_id: id, message: fb_post['message'], page_id: page_id
+            post = Post.create fb_id: id, 
+                               message: fb_post['message'].scrub,
+                               page_id: page_id
             post.save
             puts "Baixando dados do post em " + Time.parse(fb_post['created_time']).strftime('%d/%m/%Y %H:%M:%S')
             bar = ProgressBar.new Facebook.total_likes(id)
@@ -86,5 +96,12 @@ class Event < ActiveRecord::Base
                 bar.increment!
             end
         end
+    end
+    def self.interacting
+        total = Set.new
+        Event.all.each do |e|
+            total.merge(e.confirmations.map(&:user_id))
+        end
+        total
     end
 end
