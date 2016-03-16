@@ -4,6 +4,13 @@ require 'progress_bar'
 require './connect_db.rb'
 require './connect_fb.rb'
 
+# Nil encodes to nil
+class NilClass
+    def encode (x, args = {})
+        nil
+    end
+end
+
 class Page < ActiveRecord::Base
     has_many :posts, dependent: :destroy
 
@@ -51,7 +58,7 @@ class Post < ActiveRecord::Base
         ActiveRecord::Base.transaction do
             fb_post = Facebook.connect(id, 'self')
             post = Post.create fb_id: id, 
-                               message: fb_post['message'].scrub,
+                               message: fb_post['message'].encode('ISO-8859-1', invalid: :replace, undef: :replace),
                                page_id: page_id
             post.save
             puts "Baixando dados do post em " + Time.parse(fb_post['created_time']).strftime('%d/%m/%Y %H:%M:%S')
