@@ -58,6 +58,12 @@ class FB
     def total_likes(id)
         return @graph.get_object(id, fields: "likes.summary(true)")['likes']['summary']['total_count']
     end
+    def total_attending(id)
+        return @graph.get_object(id, fields: "attending.summary(true)")['attending']['summary']['count']
+    end
+    def graph
+        return @graph
+    end
     # entra na pagina, loga no FB e devolve o código
     def get_access_code(page)
         @agent = Mechanize.new

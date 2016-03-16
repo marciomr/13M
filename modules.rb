@@ -79,7 +79,7 @@ class Event < ActiveRecord::Base
             event.save
             puts "Baixando dados do evento #{event.name}..."
             attending = Facebook.connect(id, 'attending')
-            bar = ProgressBar.new(400000)
+            bar = ProgressBar.new Facebook.total_attending(id)
             Facebook.total(attending) do |user|
                 new_user = Confirmation.create user_id: user['id'], event_id: event.id
                 new_user.save
