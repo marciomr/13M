@@ -1,6 +1,6 @@
 # Instale o ruby #
 * No Debian/Ubuntu
-  * `sudo apt-get install ruby ruby-dev libsqlite3-dev`
+  * `sudo apt-get install ruby ruby-dev`
   * `sudo gem install bundler`
 * No Windows
   * http://rubyinstaller.org/
@@ -18,6 +18,17 @@
 
 # Baixe o programa #
 * `git clone https://github.com/marciomr/13M.git`
+
+# Crie o banco de dados
+* Baixe o MySQL. Em Ubuntu, algo como
+  * `sudo apt-get install mysql-server-5.6 libmysqlclient-dev`
+* Entre no MySQL e crie o usuário e database para o 13M:
+```
+CREATE USER 13M@'localhost';
+SET PASSWORD FOR 13M@'localhost' = PASSWORD('13M');
+CREATE DATABASE 13M;
+GRANT ALL ON 13M.* TO 13M@'localhost';
+```
 
 # Rode o programa #
 * Entre na pasta `cd 13M`
