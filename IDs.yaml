@@ -1,11 +1,11 @@
 ---
-limits:
-  - 13/02/2016
-  - 13/03/2016
-events:
+limits: # Limite para coleta de posts em cada página
+  low:  "13/02/2016 00:00:00"
+  high: "13/03/2016 00:00:00"
+events: # ID dos eventos a coletar
   - 951257884911187 # Mega manifestação
   - 430541500488792 # Evento do Partido Anti PT
-pages:
+pages: # ID das páginas a coletar
   - 255484451162747 # Amigos da Rota
   - 228363373866025 # Polícia Militar do Estado de São Paulo
   - 337944796341003 # Solidariedade

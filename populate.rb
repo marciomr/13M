@@ -7,3 +7,7 @@ IDs = YAML.load_file("IDs.yaml")
 IDs["events"].each { |e|
     Event.populate e
 }
+
+IDs["pages"].each { |p|
+    Page.populate p, IDs["limits"]
+}

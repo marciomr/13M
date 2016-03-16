@@ -25,6 +25,8 @@ class Page < ActiveRecord::Base
         puts "Baixando dados da página #{page.name}..."
         posts = Facebook.connect(id, 'posts')
         Facebook.total(posts) do |post|
+            next if Time.parse(post['created_time']) > Time.parse(limits['high']) # too soon
+            break if Time.parse(post['created_time']) < Time.parse(limits['low']) # too old
             Post.populate post['id'], page.id
         end
     end
@@ -43,7 +45,7 @@ class Post < ActiveRecord::Base
             post = Post.create fb_id: id, message: fb_post['message'], page_id: page_id
             post.save
             puts "Baixando dados do post em " + Time.parse(fb_post['created_time']).strftime('%d/%m/%Y %H:%M:%S')
-            bar = ProgressBar.new(400000)
+            bar = ProgressBar.new Facebook.total_likes(id)
             post.populate_likes (bar)
         end
     end
