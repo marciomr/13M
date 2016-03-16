@@ -67,7 +67,7 @@ class Post < ActiveRecord::Base
         end
     end
     def populate_likes (bar)
-        post_likes = Facebook.connect(fb_id, 'likes')
+        post_likes = Facebook.connect(fb_id, 'likes', {limit: 250})
         Facebook.total(post_likes) do |like|
             self.likes.create user_id: like['id']
             bar.increment!
