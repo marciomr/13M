@@ -22,6 +22,14 @@ pages: # ID das páginas a coletar
   - 100114543363891 # Folha de S.Paulo
   - 109597815616 # VEJA
   - 208858059145942 # Pragmatismo Político
+  - 172582159505249 # EBC na Rede 
+  - 143371292411222 # Rede Record 
+  - 159354314154963 # Jornal Nacional 
+  - 142656675745901 # Revista ISTOÉ
+  - 200292646669956 # GloboNews 
+  - 115230991849922 # O Globo 
+  - 303522857815 # BBC Brasil 
+  - 21539158238 # UOL 
 # POLÍTICOS
   - 112892465403479 # Fernando Gabeira
   - 166860353356903 # Cristovam Buarque
@@ -42,6 +50,10 @@ pages: # ID das páginas a coletar
   - 128416167198648 # Marcelo Freixo
   - 279610508863219 # Ricardo Young
   - 176976939109000 # Marco Feliciano
+  - 904277726319518 # Fernando Haddad 
+  - 398434416879875 # Ronaldo Caiado
+  - 214642781928359 # Fernando Henrique Cardoso 
+  - 1453548241604118 # Ciro Gomes 
 # MOVIMENTOS
   - 255484451162747 # Amigos da Rota
   - 228363373866025 # Polícia Militar do Estado de São Paulo
@@ -88,6 +100,9 @@ pages: # ID das páginas a coletar
   - 343871692398773 # Raquel Sheherazade - Opinião
   - 213619975433144 # Rodrigo Constantino
   - 275181425967272 # Olavo de Carvalho
+  - 153431711429078 # José Luiz Datena 
+  - 204923579555579 # Luiz Felipe Pondé
+  - 541352512600243 # Demétrio Magnoli 
 # PARTIDOS
   - 181779198501724 # Democratas
   - 168865359819628 # Partido Novo
@@ -97,4 +112,3 @@ pages: # ID das páginas a coletar
   - 190928727653011 # PSDB
   - 131269027034740 #PSOL 50 - Partido Socialismo e Liberdade
   - 493416060696750 # REDE
-  
