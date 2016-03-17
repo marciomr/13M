@@ -42,12 +42,12 @@ class FB
         @config = YAML.load_file(".config")
     end
     # se a conexão falhar espere 5 segundos e tente de novo
-    def connect(id, type)
+    def connect(id, type, args = {})
         begin
             if type == "self"
                 return @graph.get_object(id)
             else
-                return @graph.get_connections(id, type)
+                return @graph.get_connections(id, type, args)
             end
         rescue
             puts "Retrying failed connection..."
@@ -55,6 +55,9 @@ class FB
             return connect(id, type)
         end
     end
+#    def graph
+#        @graph
+#    end
     def total_likes(id)
         return @graph.get_object(id, fields: "likes.summary(true)")['likes']['summary']['total_count']
     end
@@ -82,7 +85,14 @@ class FB
 
         # conecta com a Graph API
         @oauth = Koala::Facebook::OAuth.new(@config['app_id'], @config['app_secret'], REDIRECT_URL)
-        code = get_access_code(@oauth.url_for_oauth_code)
+        begin
+            code = get_access_code(@oauth.url_for_oauth_code)
+        rescue
+            puts "Houve um erro ao resgatar o token de autorização. Copie e cole o seguinte URL"
+            puts "em um browser, autorize o app e tente novamente"
+            puts @oauth.url_for_oauth_code
+            exit
+        end
         token = @oauth.get_access_token(code)
         @graph = Koala::Facebook::API.new(token)
     end
