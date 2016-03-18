@@ -60,7 +60,8 @@ pages: # ID das páginas a coletar
   - 904277726319518 # Fernando Haddad 
   - 398434416879875 # Ronaldo Caiado
   - 214642781928359 # Fernando Henrique Cardoso 
-  - 1453548241604118 # Ciro Gomes 
+  - 1453548241604118 # Ciro Gomes
+  - 226117357411839 # Paulo Skaf
 # MOVIMENTOS
   - 255484451162747 # Amigos da Rota
   - 228363373866025 # Polícia Militar do Estado de São Paulo
@@ -91,7 +92,6 @@ pages: # ID das páginas a coletar
 # FORMADORES DE OPINIÃO  
   - 419178804809295 # Socialista Morena
   - 540986972601727 # Marco Antonio Villa
-  - 337944796341003 # Solidariedade
   - 110580802358598 # Lobão, o legítimo
   - 137547819655114 # Danilo Gentili
   - 122876494458807 # Rafinha Bastos
@@ -111,6 +111,7 @@ pages: # ID das páginas a coletar
   - 204923579555579 # Luiz Felipe Pondé
   - 541352512600243 # Demétrio Magnoli 
 # PARTIDOS
+  - 337944796341003 # Solidariedade
   - 181779198501724 # Democratas
   - 168865359819628 # Partido Novo
   - 185875761943 # PMDB Nacional
