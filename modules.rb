@@ -4,6 +4,8 @@ require 'progress_bar'
 require './connect_db.rb'
 require './connect_fb.rb'
 
+LOGFILE = 'progress.log'
+
 # Nil encodes to nil
 class NilClass
     def encode (x, args = {})
@@ -43,6 +45,9 @@ class Page < ActiveRecord::Base
             next if Time.parse(post['created_time']) > Time.parse(limits['high']) # too soon
             break if Time.parse(post['created_time']) < Time.parse(limits['low']) # too old
             Post.populate post['id'], page.id
+        end
+        File.open(LOGFILE, 'a') do |f|
+          f.puts fb_page['name']
         end
     end
 end
