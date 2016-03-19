@@ -67,7 +67,7 @@ class Post < ActiveRecord::Base
         end
     end
     def populate_likes (bar)
-        post_likes = Facebook.connect(fb_id, 'likes', {limit: 250})
+        post_likes = Facebook.connect(fb_id, 'likes', {limit: 300})
         Facebook.total(post_likes) do |like|
             self.likes.create user_id: like['id']
             bar.increment!
@@ -95,7 +95,7 @@ class Event < ActiveRecord::Base
             event = Event.create(fb_id: id, name: fb_event['name'])
             event.save
             puts "Baixando dados do evento #{event.name}..."
-            attending = Facebook.connect(id, 'attending')
+            attending = Facebook.connect(id, 'attending', {limit: 300})
             bar = ProgressBar.new Facebook.total_attending(id)
             Facebook.total(attending) do |user|
                 new_user = Confirmation.create user_id: user['id'], event_id: event.id
