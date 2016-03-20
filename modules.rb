@@ -18,13 +18,8 @@ class Page < ActiveRecord::Base
     has_many :likes, through: :posts
     
     # devolve todos os likes de todos os posts de uma página
-    # deve ficar mais rapido usando o SQL SUM
     def likes_total
-        total = 0
-        posts.all.each do |post|
-            total += post.likes.size
-        end
-        total
+      likes.count
     end
     # devolve todos os usuarios que interagiram com a pagina
     def interacting
