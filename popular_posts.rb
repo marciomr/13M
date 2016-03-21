@@ -9,6 +9,8 @@ def print_posts(posts)
   end
 end
 
+IDs = YAML.load_file("IDs.yaml")
+
 IDs["events"].each do |event, ids|
   puts "Posts mais populares em #{event}"; puts "Lendo banco de dados..."
 
