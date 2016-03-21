@@ -5,8 +5,8 @@ def print_posts(posts)
     post = Post.find(id)
     puts post.page.name
     likes_totais = post.likes.count
-    puts "#{likes} de #{likes_totais} (#{100*likes.to_f/likes_total})"
-    puts p.message
+    puts "#{likes} de #{likes_totais} (#{100*likes.to_f/likes_totais})"
+    puts post.message
   end
 end
 
