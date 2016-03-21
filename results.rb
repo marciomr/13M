@@ -19,12 +19,13 @@ IDs["events"].each do |event, ids|
     l = p.likes_total
     puts "Página #{p.name}"
     puts "Interagiram no período: #{i.count}; likes: #{l}; média: #{ (l.to_f / i.count).round(2) } likes por usuário"
-#
-    count = p.likes.joins("JOIN confirmations ON likes.user_id = confirmations.user_id").where("confirmations.event_id IN (?)", events).select(:user_id).distinct.count
-    puts "Confirmados em #{event}: #{count}"
+
+    likes_conf = p.likes.joins("JOIN confirmations ON likes.user_id = confirmations.user_id")
+    conf_in_event = likes_conf.where("confirmations.event_id IN (?)", events).select(:user_id).distinct
+    puts "Confirmados em #{event}: #{conf_in_event.count}"
 
     CSV.open("#{event}.csv", "a+") do |csv|
-      csv << [p.name, i.count, l, count]
+      csv << [p.name, i.count, l, conf_in_event.count]
     end
   end
 end
