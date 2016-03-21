@@ -4,7 +4,8 @@ def print_posts(posts)
   posts.each do |id, likes|
     post = Post.find(id)
     puts post.page.name
-    puts "#{likes} de #{post.likes_total} (#{100*likes.to_f/post.likes_total})"
+    likes_totais = post.likes.count
+    puts "#{likes} de #{likes_totais} (#{100*likes.to_f/likes_total})"
     puts p.message
   end
 end
