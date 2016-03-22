@@ -3,8 +3,11 @@ limits: # Limite para coleta de posts em cada página
   low:  "13/02/2016 00:00:00"
   high: "13/03/2016 00:00:00"
 events: # ID dos eventos a coletar
-  - 951257884911187 # Mega manifestação
-  - 430541500488792 # Evento do Partido Anti PT
+  13M:
+    - 951257884911187 # Mega manifestação
+    - 430541500488792 # Evento do Partido Anti PT
+  18M:
+    - 909827309124576 # Ato em defesa da democracia e contra o golpe
 pages: # ID das páginas a coletar
 # MIDIA
   - 164188247072662 # NINJA

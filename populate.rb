@@ -4,7 +4,7 @@ require './modules.rb'
 
 IDs = YAML.load_file("IDs.yaml")
 
-IDs["events"].each { |e|
+IDs["events"].values.flatten.each { |e|
     Event.populate e
 }
 

@@ -23,7 +23,7 @@ class Page < ActiveRecord::Base
     end
     # devolve todos os usuarios que interagiram com a pagina
     def interacting
-      Set.new likes.select(:user_id).distinct.map(&:user_id)
+      likes.select(:user_id).distinct
     end
 
     def self.populate (id, limits)
